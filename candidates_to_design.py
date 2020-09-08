@@ -14,7 +14,7 @@ import pandas as pd
 This module provides a command line tool that generates a json design
 that can be imported into TeselaGen's DESIGN module. As an input, this
 tool uses a csv data table as the one can be exported from the *evolutions*
-algorithm's result, at EVOLVE. Sobe usage examples can be found below
+algorithm's result, at EVOLVE. Some usage examples can be found below
 """
 
 def build_design_from_candidates(
@@ -69,6 +69,7 @@ def build_design_from_candidates(
         for i_el, el in enumerate(data):
             el_i += 1
             designs['design']['element'][f"{el_i}"] = {
+            	"id": f"{el_i}",
                 "name": el[bin_name],
                 "index": i_el,
                 "binId": f"{i_bin+1}"}
